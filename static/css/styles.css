@@ -1,0 +1,512 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f8fb; 
+    color: #333;
+}
+
+
+.container {
+    max-width: 100%;
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #00bce4; 
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #00bce4;
+    margin: 0;
+}
+
+.header p {
+    color: #666;
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.form-group, .form-group-inline {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-inline {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+label {
+    font-weight: 600;
+    color: #00bce4;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input, select {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: #40c4aa; 
+    box-shadow: 0 0 4px rgba(64, 196, 170, 0.4);
+}
+
+/* Botón */
+button {
+    padding: 12px;
+    background-color: #ec6625;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ec6625;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; 
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .container {
+        max-width: 600px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+}
+
+
+
+.lang-switcher {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.lang-switcher a {
+    display: inline-block;
+    padding: 6px 14px;
+    margin-left: 8px;
+    border: 1px solid #00bce4;
+    border-radius: 4px;
+    color: #00bce4;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.lang-switcher a.active {
+    background-color: #00bce4;
+    color: #fff;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.header-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #00796b;
+    margin: 0;
+}
+
+.header p {
+    color: #666;
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+}
+.alert ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.image {
+    width: 25%; 
+    height: 25%;
+    margin-bottom: 5%;
+}
+
+
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .container1 {
+        max-width: 60%;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .container1 {
+        max-width: 500px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+}
+
+
+.container1 {
+    max-width: 100%;
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #00bce4; 
+}
+
+.image1 {
+    width: 75%; 
+    height: 75%;
+    margin-bottom: 5%;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.instructions {
+    background-color: #00bce4; 
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+}
+
+.title-group {
+    flex: 1;
+    max-width: 150px;  
+}
+
+.name-group {
+    flex: 3;  
+}
+
+.download-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #ec6625;  
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.download-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.logout-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #f44336;  
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 20px;  
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}
+
+.logout-btn:active {
+    transform: translateY(0);
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.title-group1 {
+    flex: 2;
+    max-width: 200px;  
+}
+.name-group1 {
+    flex: 2;  
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.phone-prefix {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo para Slider */
+/* Estilo para Slider */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+  text-decoration: none;
+}
+
+.slider-container {
+  width: 100%;
+  position: relative;
+  background-color: white;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+}
+
+.slide-image {
+  width: 100%;
+  height: auto; /* Adjusted height */
+  object-fit: cover;
+  /*filter: brightness(0.6);*/
+}
+
+.slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.slide-title {
+  width: 100%;
+  max-width: 50rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.slide-desc {
+  width: 100%;
+  max-width: 50rem;
+  color: lightgray;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.slide-btn {
+  color: black;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-transform: capitalize;
+  transition: ease 0.3s;
+}
+
+.slide-btn:hover {
+  gap: 1rem;
+}
+
+.slide-number-container {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 5;
+  font-size: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: rgba(211, 211, 211, 0.788);
+  letter-spacing: 0.2rem;
+}
+
+.slide-number-container hr {
+  width: 3rem;
+  transform: rotate(130deg);
+  border-color: rgba(211, 211, 211, 0.788);
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.slider-nav-btn {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.226);
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease 0.3s;
+}
+
+.slider-nav-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.dot-container {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+  background-color: rgba(0, 0, 0, 0.226);
+  border-radius: 50%;
+  display: inline-block;
+  transition: ease 0.3s;
+}
+
+.active,
+.dot:hover {
+  background-color: rgb(249, 207, 171);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*Estilo para Slider*/

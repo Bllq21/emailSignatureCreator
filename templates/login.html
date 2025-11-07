@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ t.app_title }}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switcher">
+            <a href="{{ url_for(request.endpoint, lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
+            <a href="{{ url_for(request.endpoint, lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
+        </div>
+        <div class="header">
+            <h1>{{ t.login_title }}</h1>
+            <p>{{ t.login_subtitle }}</p>
+        </div>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert">
+              <ul>
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endwith %}
+        <form action="/login?lang={{ lang }}" method="post">
+            <div class="form-group">
+                <label for="email">{{ t.email_label }}</label>
+                <input type="email" id="email" name="email" placeholder="{{ t.email_placeholder }}" required>
+            </div>
+            <button type="submit">{{ t.login_btn }}</button>
+        </form>
+    </div>
+</body>
+</html>
