@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ t.app_title }}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="{{ url_for('static', filename='script_posiciones.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switcher">
+            <a href="{{ url_for(request.endpoint, lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
+            <a href="{{ url_for(request.endpoint, lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
+        </div>
+        <div class="header">
+            <div class="header-content">
+                <div>
+                    <h1>{{ t.app_title }}</h1>
+                    <p>{{ t.login_subtitle }}</p>
+                </div>
+            </div>
+        </div>
+        <form action="/generate?lang={{ lang }}" method="post">
+            <div class="form-group-inline">
+                <div class="form-group title-group">
+                    <label for="title">{{ t.title_label }}</label>
+                    <select id="title" name="title">
+                        <option value=""> </option>
+                        {% for title_option in titles %}
+                        <option value="{{ title_option }}">{{ title_option }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group name-group">
+                    <label for="name">{{ t.name_label }}</label>
+                    <input type="text" id="name" name="name" placeholder="{{ t.name_placeholder }}" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">{{ t.lastname_label }}</label>
+                <input type="text" id="lastname" name="lastname" placeholder="{{ t.lastname_placeholder }}" required>
+            </div>
+
+            <div class="form-group-inline">
+                <div class="form-group title-group1">
+                    <label for="area">{{ t.area_label }}</label>
+                    <select id="area" name="area" onchange="actualizarPosiciones()" required>
+                        <option value="">{{ t.area_placeholder }}</option>
+                    </select>
+                    {% if session['user_type'] == 'admin' %}
+                        <button type="button" onclick="addCustomOption('area')">{{ t.add_option }} {{ t.area_label }}</button>
+                    {% endif %}
+                </div>
+                <div class="form-group name-group1">
+                    <label for="position">{{ t.position_label }}</label>
+                    <select id="position" name="position" required>
+                        <option value="">{{ t.position_placeholder }}</option>
+                    </select>
+                    {% if session['user_type'] == 'admin' %}
+                        <button type="button" onclick="addCustomOption('position')">{{ t.add_option }} {{ t.position_label }}</button>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">{{ t.email_label }}</label>
+                <input type="email" id="email" name="email" value="{{ email }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">{{ t.phone_label }}</label>
+                <div class="phone-input">
+                    <span class="phone-prefix">{{ phone_prefix }}</span>
+                    <input type="text" id="phone" name="phone" placeholder="{{ t.phone_placeholder }}"
+                           inputmode="numeric">
+                </div>
+            </div>
+
+            <button type="submit">{{ t.generate_btn }}</button>
+        </form>
+
+        <script>
+            window.onload = function() {
+                var isAdmin = '{{ session["user_type"] }}' === 'admin';
+                var areaSelect = document.getElementById('area');
+                if (areaSelect && areaSelect.options.length > 1) {
+                    areaSelect.selectedIndex = areaSelect.options.length - 1;
+                }
+                var positionSelect = document.getElementById('position');
+                if (positionSelect && positionSelect.options.length > 1) {
+                    positionSelect.selectedIndex = positionSelect.options.length - 1;
+                }
+            };
+
+            function addCustomOption(selectId) {
+                var inputValue = prompt("{{ t.add_option }}:");
+                if (inputValue && inputValue.trim()) {
+                    var selectElement = document.getElementById(selectId);
+                    var newOption = document.createElement("option");
+                    newOption.value = inputValue.trim();
+                    newOption.textContent = inputValue.trim();
+                    selectElement.appendChild(newOption);
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

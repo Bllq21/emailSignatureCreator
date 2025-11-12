@@ -1,0 +1,96 @@
+{
+    "Engineering": [
+        "Software Engineer",
+        "Senior Software Engineer",
+        "Frontend Developer",
+        "Backend Developer",
+        "Full Stack Developer",
+        "DevOps Engineer",
+        "QA Engineer",
+        "Data Engineer",
+        "Infrastructure Engineer",
+        "Security Engineer",
+        ""
+    ],
+    "Design": [
+        "UI/UX Designer",
+        "Graphic Designer",
+        "Product Designer",
+        "Motion Designer",
+        "Design Lead",
+        ""
+    ],
+    "Product": [
+        "Product Manager",
+        "Product Owner",
+        "Product Analyst",
+        "Associate Product Manager",
+        ""
+    ],
+    "Marketing": [
+        "Marketing Manager",
+        "Content Strategist",
+        "SEO Specialist",
+        "Social Media Manager",
+        "Growth Marketer",
+        "Brand Manager",
+        "Marketing Analyst",
+        ""
+    ],
+    "Sales": [
+        "Sales Manager",
+        "Account Executive",
+        "Sales Representative",
+        "Business Development",
+        "Customer Success Manager",
+        "Account Manager",
+        ""
+    ],
+    "Human Resources": [
+        "HR Manager",
+        "Recruiter",
+        "HR Generalist",
+        "Talent Acquisition Specialist",
+        "People Operations",
+        "Training Coordinator",
+        ""
+    ],
+    "Finance": [
+        "Finance Manager",
+        "Accountant",
+        "Financial Analyst",
+        "Controller",
+        "Auditor",
+        "Payroll Specialist",
+        ""
+    ],
+    "Operations": [
+        "Operations Manager",
+        "Project Manager",
+        "Scrum Master",
+        "Agile Coach",
+        "Operations Coordinator",
+        "Administrative Assistant",
+        ""
+    ],
+    "Legal": [
+        "Legal Counsel",
+        "Paralegal",
+        "Compliance Officer",
+        "Contract Manager",
+        ""
+    ],
+    "Executive": [
+        "CEO",
+        "CTO",
+        "CFO",
+        "COO",
+        "VP of Engineering",
+        "VP of Product",
+        "Director of Operations",
+        ""
+    ],
+    "": [
+        ""
+    ]
+}

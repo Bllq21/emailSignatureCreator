@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ t.signature_title }}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container1" style="text-align: center;">
+        <div class="lang-switcher">
+            <a href="{{ url_for(request.endpoint, lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
+            <a href="{{ url_for(request.endpoint, lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
+        </div>
+        <h1 class="header">{{ t.signature_title }}</h1>
+
+        <img src="{{ image_url }}" alt="{{ t.signature_title }}" class="image1">
+
+        <br><br>
+
+        <div class="instructions">
+            <h2>{{ t.instructions_title }}</h2>
+            {% if lang == 'en' %}
+            <ol>
+                <li>Open your email client (Gmail, Outlook, etc.).</li>
+                <li>Go to Settings and look for the "Signature" section.</li>
+                <li>Create a new signature and upload the generated image.</li>
+                <li>Set it as the default signature for new emails and replies.</li>
+                <li>Save changes.</li>
+            </ol>
+            {% else %}
+            <ol>
+                <li>Abre tu cliente de correo (Gmail, Outlook, etc.).</li>
+                <li>Ve a Configuración y busca la sección "Firma".</li>
+                <li>Crea una nueva firma y sube la imagen generada.</li>
+                <li>Establaécela como firma predeterminada para nuevos correos y respuestas.</li>
+                <li>Guarda los cambios.</li>
+            </ol>
+            {% endif %}
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="{{ image_url }}" download="firma_generada.png" class="no-underline">
+                <button class="download-btn">{{ t.download_btn }}</button>
+            </a>
+
+            <form action="{{ url_for('logout') }}?lang={{ lang }}" method="get" style="display: inline;">
+                <button type="submit" class="logout-btn">{{ t.logout_btn }}</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="/static/script.js"></script>
+</html>
