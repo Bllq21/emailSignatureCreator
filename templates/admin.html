@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ t.admin_panel }}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switcher">
+            <a href="{{ url_for(request.endpoint, lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
+            <a href="{{ url_for(request.endpoint, lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
+        </div>
+        <h1>{{ t.admin_panel }}</h1>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert">
+              <ul>
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <h2>{{ t.upload_template }}</h2>
+        <form action="/admin?lang={{ lang }}" method="post" enctype="multipart/form-data">
+            <label for="template">{{ t.template_file }}</label>
+            <input type="file" id="template" name="template" required>
+            <button type="submit">{{ t.upload_btn }}</button>
+        </form>
+
+        <h2>{{ t.existing_templates }}</h2>
+        <ul style="list-style-type: none; padding: 0;">
+            {% for template in templates %}
+                <li style="margin-bottom: 20px;">
+                    <img src="/static/templates/{{ template }}" alt="{{ template }}"
+                         style="width: 150px; height: auto; display: block; margin-bottom: 5px;">
+                    <span>{{ template }}</span>
+
+                    {% if template == active_template %}
+                        <strong style="color: green;">({{ t.active }})</strong>
+                    {% else %}
+                        <form action="{{ url_for('set_template', template_name=template) }}?lang={{ lang }}" method="post" style="display:inline;">
+                            <button type="submit">{{ t.set_active }}</button>
+                        </form>
+                    {% endif %}
+
+                    <form action="/delete_template?lang={{ lang }}" method="post" style="display:inline;">
+                        <input type="hidden" name="template_name" value="{{ template }}">
+                        <button type="submit">{{ t.delete }}</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <form action="{{ url_for('logout') }}?lang={{ lang }}" method="get" style="display: inline;">
+            <button type="submit" class="logout-btn">{{ t.logout_btn }}</button>
+        </form>
+    </div>
+</body>
+</html>
