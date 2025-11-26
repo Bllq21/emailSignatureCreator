@@ -181,14 +181,18 @@ def load_allowed_emails():
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
+from urllib.parse import urlparse, urlunparse
+
 @app.route("/lang/<lang>")
 def switch_lang(lang):
     if lang in ("en", "es"):
         session["lang"] = lang
     referrer = request.referrer or ""
-    if "/generate" in referrer:
+    parsed = urlparse(referrer)
+    clean_referrer = urlunparse((parsed.scheme, parsed.netloc, parsed.path, '', '', ''))
+    if "/generate" in clean_referrer:
         return redirect(url_for("index", lang=lang))
-    return redirect(referrer or url_for("home", lang=lang))
+    return redirect(clean_referrer or url_for("home", lang=lang))
 
 @app.route("/")
 def home():
