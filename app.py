@@ -185,7 +185,10 @@ def load_allowed_emails():
 def switch_lang(lang):
     if lang in ("en", "es"):
         session["lang"] = lang
-    return redirect(request.referrer or url_for("home", lang=lang))
+    referrer = request.referrer or ""
+    if "/generate" in referrer:
+        return redirect(url_for("index", lang=lang))
+    return redirect(referrer or url_for("home", lang=lang))
 
 @app.route("/")
 def home():

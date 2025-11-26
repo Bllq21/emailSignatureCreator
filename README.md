@@ -62,6 +62,8 @@ Edit `.env` with your organization's settings:
 
 ## Adding Templates
 
+Templates should be **1814 × 602 pixels** for best results. Text positioning and scaling are calculated relative to this reference size.
+
 1. Log in as admin (`/adminlogin`)
 2. Upload a PNG/JPG template image
 3. Set it as the active template

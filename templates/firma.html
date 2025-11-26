@@ -8,10 +8,6 @@
 </head>
 <body>
     <div class="container1" style="text-align: center;">
-        <div class="lang-switcher">
-            <a href="{{ url_for('switch_lang', lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
-            <a href="{{ url_for('switch_lang', lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
-        </div>
         <h1 class="header">{{ t.signature_title }}</h1>
 
         <img src="{{ image_url }}" alt="{{ t.signature_title }}" class="image1">
