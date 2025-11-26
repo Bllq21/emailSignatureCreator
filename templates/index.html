@@ -9,17 +9,18 @@
 </head>
 <body>
     <div class="container">
-        <div class="lang-switcher">
-            <a href="{{ url_for(request.endpoint, lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
-            <a href="{{ url_for(request.endpoint, lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
+        <div class="top-bar">
+            <div class="lang-switcher">
+                <a href="{{ url_for('switch_lang', lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
+                <a href="{{ url_for('switch_lang', lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
+            </div>
+            {% if session['user_type'] == 'admin' %}
+            <a href="{{ url_for('admin', lang=lang) }}" class="admin-badge">{{ t.admin_link }}</a>
+            {% endif %}
         </div>
         <div class="header">
-            <div class="header-content">
-                <div>
-                    <h1>{{ t.app_title }}</h1>
-                    <p>{{ t.login_subtitle }}</p>
-                </div>
-            </div>
+            <h1>{{ t.app_title }}</h1>
+            <p>{{ t.login_subtitle }}</p>
         </div>
         <form action="/generate?lang={{ lang }}" method="post">
             <div class="form-group-inline">

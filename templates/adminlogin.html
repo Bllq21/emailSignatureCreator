@@ -9,8 +9,8 @@
 <body>
     <div class="container">
         <div class="lang-switcher">
-            <a href="{{ url_for(request.endpoint, lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
-            <a href="{{ url_for(request.endpoint, lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
+            <a href="{{ url_for('switch_lang', lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
+            <a href="{{ url_for('switch_lang', lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
         </div>
         <div class="header">
             <h1>{{ t.admin_login }}</h1>
@@ -37,6 +37,9 @@
             </div>
             <button type="submit">{{ t.admin_login_btn }}</button>
         </form>
+        <div class="footer-link">
+            <a href="{{ url_for('home', lang=lang) }}">{{ t.go_home }}</a>
+        </div>
     </div>
 </body>
 </html>

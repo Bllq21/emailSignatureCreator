@@ -9,8 +9,8 @@
 <body>
     <div class="container1" style="text-align: center;">
         <div class="lang-switcher">
-            <a href="{{ url_for(request.endpoint, lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
-            <a href="{{ url_for(request.endpoint, lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
+            <a href="{{ url_for('switch_lang', lang='en') }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
+            <a href="{{ url_for('switch_lang', lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
         </div>
         <h1 class="header">{{ t.signature_title }}</h1>
 
@@ -33,7 +33,7 @@
                 <li>Abre tu cliente de correo (Gmail, Outlook, etc.).</li>
                 <li>Ve a Configuración y busca la sección "Firma".</li>
                 <li>Crea una nueva firma y sube la imagen generada.</li>
-                <li>Establaécela como firma predeterminada para nuevos correos y respuestas.</li>
+                <li>Establecécela como firma predeterminada para nuevos correos y respuestas.</li>
                 <li>Guarda los cambios.</li>
             </ol>
             {% endif %}
@@ -44,11 +44,14 @@
                 <button class="download-btn">{{ t.download_btn }}</button>
             </a>
 
+            <a href="{{ url_for('index', lang=lang) }}" class="no-underline">
+                <button class="back-btn">{{ t.new_signature }}</button>
+            </a>
+
             <form action="{{ url_for('logout') }}?lang={{ lang }}" method="get" style="display: inline;">
                 <button type="submit" class="logout-btn">{{ t.logout_btn }}</button>
             </form>
         </div>
     </div>
 </body>
-<script src="/static/script.js"></script>
 </html>

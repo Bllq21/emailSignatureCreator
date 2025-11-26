@@ -166,6 +166,66 @@ button:active {
     color: #fff;
 }
 
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.top-bar .lang-switcher {
+    margin-bottom: 0;
+}
+
+.admin-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid #ec6625;
+    border-radius: 4px;
+    color: #ec6625;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.admin-badge:hover {
+    background-color: #ec6625;
+    color: #fff;
+}
+
+.back-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #00bce4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #009cc4;
+    transform: translateY(-2px);
+}
+
+.footer-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-link a {
+    color: #888;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.footer-link a:hover {
+    color: #00bce4;
+}
+
 .header-content {
     display: flex;
     align-items: center;

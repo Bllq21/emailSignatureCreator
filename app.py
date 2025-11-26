@@ -73,6 +73,8 @@ TRANSLATIONS = {
         "template_not_found": "Template not found.",
         "invalid_format": "Invalid file format. Only PNG/JPG accepted.",
         "language": "Language",
+        "new_signature": "New Signature",
+        "admin_link": "Admin Panel",
     },
     "es": {
         "app_title": "Generador de Firma de Correo",
@@ -123,6 +125,8 @@ TRANSLATIONS = {
         "template_not_found": "La plantilla no existe.",
         "invalid_format": "Formato de archivo no válido. Solo se aceptan PNG/JPG.",
         "language": "Idioma",
+        "new_signature": "Nueva Firma",
+        "admin_link": "Panel de Administración",
     },
 }
 
@@ -176,6 +180,12 @@ def load_allowed_emails():
         return [entry["email"] for entry in data]
     except (FileNotFoundError, json.JSONDecodeError):
         return []
+
+@app.route("/lang/<lang>")
+def switch_lang(lang):
+    if lang in ("en", "es"):
+        session["lang"] = lang
+    return redirect(request.referrer or url_for("home", lang=lang))
 
 @app.route("/")
 def home():
