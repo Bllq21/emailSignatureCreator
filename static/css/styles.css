@@ -2,7 +2,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFF4E6;
+    background-color: #F0FDFA;
     color: #20123A;
 }
 
@@ -14,7 +14,7 @@ body {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    border-left: 6px solid #FF9400;
+    border-left: 6px solid #0D9488;
 }
 
 .header {
@@ -24,7 +24,7 @@ body {
 
 .header h1 {
     font-size: 24px;
-    color: #FF4F1E;
+    color: #0D9488;
     margin: 0;
 }
 
@@ -54,7 +54,7 @@ form {
 
 label {
     font-weight: 600;
-    color: #FF4F1E;
+    color: #0D9488;
     margin-bottom: 5px;
     font-size: 14px;
 }
@@ -71,13 +71,13 @@ input, select {
 }
 
 input:focus, select:focus {
-    border-color: #FFBD4F;
-    box-shadow: 0 0 4px rgba(255, 189, 79, 0.5);
+    border-color: #5EEAD4;
+    box-shadow: 0 0 4px rgba(94, 234, 212, 0.5);
 }
 
 button {
     padding: 12px;
-    background-color: #FF9400;
+    background-color: #0D9488;
     color: #fff;
     font-weight: 600;
     font-size: 16px;
@@ -88,7 +88,7 @@ button {
 }
 
 button:hover {
-    background-color: #E08200;
+    background-color: #0F766E;
     transform: translateY(-2px);
 }
 
@@ -141,9 +141,9 @@ button:active {
     display: inline-block;
     padding: 6px 14px;
     margin-left: 8px;
-    border: 1px solid #FF9400;
+    border: 1px solid #0D9488;
     border-radius: 4px;
-    color: #FF9400;
+    color: #0D9488;
     text-decoration: none;
     font-size: 13px;
     font-weight: 600;
@@ -151,12 +151,12 @@ button:active {
 }
 
 .lang-switcher a.active {
-    background-color: #FF9400;
+    background-color: #0D9488;
     color: #fff;
 }
 
 .lang-switcher a:hover {
-    background-color: #FF9400;
+    background-color: #0D9488;
     color: #fff;
 }
 
@@ -191,7 +191,7 @@ button:active {
 .back-btn {
     padding: 12px 20px;
     font-size: 16px;
-    background-color: #FF9400;
+    background-color: #0D9488;
     color: white;
     border: none;
     border-radius: 8px;
@@ -201,7 +201,7 @@ button:active {
 }
 
 .back-btn:hover {
-    background-color: #E08200;
+    background-color: #0F766E;
     transform: translateY(-2px);
 }
 
@@ -217,7 +217,7 @@ button:active {
 }
 
 .footer-link a:hover {
-    color: #FF9400;
+    color: #0D9488;
 }
 
 .header-content {
@@ -234,7 +234,7 @@ button:active {
 
 .header h1 {
     font-size: 24px;
-    color: #FF4F1E;
+    color: #0D9488;
     margin: 0;
 }
 
@@ -292,7 +292,7 @@ button:active {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    border-left: 6px solid #FF9400;
+    border-left: 6px solid #0D9488;
 }
 
 .image1 {
@@ -303,8 +303,8 @@ button:active {
 }
 
 .instructions {
-    background-color: #FF4F1E;
-    border: 1px solid #FF4F1E;
+    background-color: #0D9488;
+    border: 1px solid #0D9488;
     padding: 20px;
     border-radius: 10px;
     text-align: left;
@@ -332,7 +332,7 @@ button:active {
 .download-btn {
     padding: 12px 20px;
     font-size: 16px;
-    background-color: #FF9400;
+    background-color: #0D9488;
     color: white;
     border: none;
     border-radius: 8px;
@@ -341,14 +341,14 @@ button:active {
 }
 
 .download-btn:hover {
-    background-color: #E08200;
+    background-color: #0F766E;
     transform: translateY(-2px);
 }
 
 .logout-btn {
     padding: 12px 20px;
     font-size: 16px;
-    background-color: #FF4F1E;
+    background-color: #B91C1C;
     color: white;
     border: none;
     border-radius: 8px;
@@ -358,7 +358,7 @@ button:active {
 }
 
 .logout-btn:hover {
-    background-color: #D94415;
+    background-color: #991B1B;
     transform: translateY(-2px);
 }
 
@@ -544,7 +544,7 @@ button:active {
 
 .active,
 .dot:hover {
-  background-color: #FFBD4F;
+  background-color: #5EEAD4;
 }
 
 .fade {
