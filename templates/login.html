@@ -13,6 +13,7 @@
             <a href="{{ url_for('switch_lang', lang='es') }}" class="{% if lang == 'es' %}active{% endif %}">ES</a>
         </div>
         <div class="header">
+            <img src="/static/toolbox-icon.png" alt="icon" class="header-icon">
             <h1>{{ t.login_title }}</h1>
             <p>{{ t.login_subtitle }}</p>
         </div>
@@ -36,6 +37,9 @@
         </form>
         <div class="footer-link">
             <a href="{{ url_for('adminlogin', lang=lang) }}">{{ t.admin_link }}</a>
+        </div>
+        <div class="footer-credit">
+            Created by <a href="https://github.com/Bllq21" target="_blank">Bryan</a>
         </div>
     </div>
 </body>
